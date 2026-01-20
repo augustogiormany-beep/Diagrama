@@ -1,0 +1,36 @@
+# Diagrama Ventanilla Única  
+Licencia de Funcionamiento – Municipio de Ciudad Madero
+
+```mermaid
+flowchart TD
+A[Inicio: Solicitud del interesado] --> B[Recepción en Ventanilla Única]
+B --> C{¿Documentación completa?}
+
+C -- No --> D[Oficio de prevención / requerimiento]
+D --> A
+
+C -- Sí --> E[Admisión del trámite y apertura de expediente único]
+E --> F[Clasificación del establecimiento]
+
+F --> G[Determinación de derechos y orden de pago]
+G --> H{¿Pago realizado?}
+
+H -- No --> I[Trámite suspendido]
+H -- Sí --> J[Turnado interno a áreas técnicas]
+
+J --> K[Uso de Suelo - Desarrollo Urbano]
+J --> L[Uso de la Construcción - Obras Públicas]
+J --> M[Protección Civil]
+
+K --> N{¿Dictamen favorable?}
+L --> N
+M --> N
+
+N -- No --> O[Oficio único de observaciones]
+O --> P[Correcciones por el interesado]
+P --> J
+
+N -- Sí --> Q[Integración final del expediente]
+Q --> R[Emisión de Licencia de Funcionamiento]
+R --> S[Notificación y entrega]
+S --> T[Fin del trámite]
